@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Nizar Qabbani</title>
+</head>
+<body>
+
+    <header>
+        <a href="./index.html" class="logo">NIZAR QABBANI</a>
+        <nav class="navigation">
+            <a href="./poems.html" target="_blank">Poems</a>
+            <a href="./marriages.html" target="_blank">Marriages</a>
+            <a href="./nf.html" target="_blank">N&F</a>
+            <a href="./bio.html" target="_blank">Bio</a>
+            <a href="./career.html" target="_blank">Career</a>
+        </nav>
+    </header>
+
+    <section class="main">
+    </section>
+
+    <section class="cards">
+        <h2 class="title">Nizar Qabbani</h2>
+        <div class="content">
+            <a href="poems.html" target="_blank">
+                <div class="card" id="poems">
+                    <i class="fas fa-edit"></i>
+                    <h3>Poems</h3>
+                </div>
+            </a>
+            <a href="marriages.html" target="_blank">
+                <div class="card" id="marriages">
+                    <i class="fas fa-edit"></i>
+                    <h3>Marriages</h3>
+                </div>
+            </a>
+            <a href="nf.html" target="_blank">
+                <div class="card" id="n&f">
+                    <i class="fas fa-edit"></i>
+                    <h3>Nizar & Friends</h3>
+                </div>
+            </a>
+            <a href="bio.html" target="_blank">
+                <div class="card" id="bio">
+                    <i class="fas fa-edit"></i>
+                    <h3>Bio</h3>
+                </div>
+            </a>
+            <a href="career.html" target="_blank">
+                <div class="card" id="career">
+                    <i class="fas fa-edit"></i>
+                    <h3>Career</h3>
+                </div>
+            </a>
+        </div>
+    </section>
+    <div class="community-of-lovers">
+        <h1 class="title comments__title">community of lovers</h1>
+        <div class="comments">
+            <p>A tragedy, when a mature mind and a romantic heart are in the same body.Nizar Qabbani</p>
+            <p>If you want to kill somebody, conquer his heart, Then leave slowly and leave them between death and madness.Nizar Qabbani</p>
+            <p>My lover asks me: “What is the difference between me and the sky?” The difference, my love, Is that when you laugh, I forget about the sky Nizar Qabbani</p>
+        </div>
+        <h4>share with us your favourite for Nizar's poems</h4>
+        <form action="">
+            <textarea name = "comments" cols = "100" rows="8">
+            Enter your Comment....
+            </textarea>
+            <br>
+            <input type ="submit" name ="button" value="Submit" class="submit__btn"/>
+        </form>
+    </div>
+    <hr>
+    <hr>
+    <footer>
+        <p>&copy; <span>2022</span> All Rights Reserved</p>
+        <div class="socail">
+            <a href="https://twitter.com/N_Qabbani"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.facebook.com/NizarQabbaniSite/"><i class="fab fa-facebook"></i></a>
+        </div>
+    </footer>
+    
+    <script>
+        let textArea = document.querySelector("textarea");
+        let formData = document.querySelector('form');
+        textArea.value = 'write your comment here XD';
+        textArea.onfocus = function() {
+            if(textArea.value === 'write your comment here XD'){
+                textArea.value = '';
+            }
+            textArea.style.borderColor = '#6767f4';
+            
+        }
+
+        textArea.onblur = function() {
+            textArea.style.borderColor = '#ccc';
+        }
+
+        formData.onsubmit = function(e) {
+            e.preventDefault()
+            let container = document.querySelector('.comments');
+            let newComment = textArea.value;
+            let html = `
+            <p>${newComment}</p>
+            `
+            container.insertAdjacentHTML('beforeend',html);
+            textArea.value = '';
+            textArea.blur()
+        }
+    </script>
+</body>
+</html>
